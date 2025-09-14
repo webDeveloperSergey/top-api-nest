@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthModule } from './auth/auth.module';
-import { TopPageModule } from './top-page/top-page.module';
-import { ProductModule } from './product/product.module';
-import { ReviewModule } from './review/review.module';
+import { UsersModule } from './users/users.module';
+import { TopPagesModule } from './top-pages/top-pages.module';
+import { ProductsModule } from './products/products.module';
+import { ReviewsModule } from './reviews/reviews.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { getMongoConfig } from './configs/mongo.config';
@@ -17,10 +17,10 @@ import { getMongoConfig } from './configs/mongo.config';
       useFactory: getMongoConfig,
       inject: [ConfigService],
     }),
-    AuthModule,
-    TopPageModule,
-    ProductModule,
-    ReviewModule,
+    UsersModule,
+    TopPagesModule,
+    ProductsModule,
+    ReviewsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
