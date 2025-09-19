@@ -32,5 +32,6 @@ export class ReviewsController {
     if (!deletedDoc) {
       throw new HttpException(REVIEW_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
+    return { status: 'deleted' };
   }
 }
