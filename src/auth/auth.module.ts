@@ -12,7 +12,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: Users.name, schema: UsersSchema }]),
-    ConfigService,
+    ConfigModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
